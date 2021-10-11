@@ -13,10 +13,11 @@ That said, this API was designed to automatically store WhatsApp group links and
 You can access this API in the following url: https://whatsapp.deta.dev. Here are the endpoints that are currently up:
 
 ### User-related
-### `POST /:key&limit=`  
-**Create new user in the database**  
-- **key:** Optional. If passed, uses its value as key. Otherwise, generates a random 6-digit key.  
-- **limit:** Number of clicks for each link. If omitted, the value used is 255.    
+### `POST /:key?limit=`  
+**Create new user in the database**
+- **:key** Optional. If passed, uses its value as key. Otherwise, generates a random 6-digit key.  
+- **limit=** Number of clicks for each link. If omitted, the value used is 255.    
+
   
 **Response:**  
 ```js
@@ -109,7 +110,7 @@ You can access this API in the following url: https://whatsapp.deta.dev. Here ar
 1. Include groups links making a POST request to https://whatsapp.deta.dev/{your-key}/add and add the URL in the request's body as the code below or add the ending of the WhatsApp link (in this example: E7XVpkrLPBrRr9krLPB) as a query parameter to the POST request, like `https://whatsapp.deta.dev/{your-key}/add?link=E7XVpkrLPBrRr9krLPB`:
 ```js
 {
-  link: "https://chat.whatsapp.com/E7XVpkrLPBrRr9krLPB"
+  "link": "https://chat.whatsapp.com/E7XVpkrLPBrRr9krLPB"
 }
 ```
 
@@ -117,7 +118,7 @@ You can access this API in the following url: https://whatsapp.deta.dev. Here ar
 
 ## 💡 Useful tips
 1. You don't have to create a custom key, but remember the generated one to use in the other endpoints.
-1. You can add https://whatsapp.deta.dev/danilo-key&redirect=true directly in the href property, because it will redirect to the current group link.
+1. You can add https://whatsapp.deta.dev/danilo-key?redirect=true directly in the href property, because it will redirect to the current group link.
 
 ## 🛠 Technologies
 
